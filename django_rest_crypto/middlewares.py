@@ -1,6 +1,3 @@
-import json
-import base64
-
 from django.conf import settings
 
 from django_rest_crypto.encrypt import EncryptData
