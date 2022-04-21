@@ -1,0 +1,7 @@
+{
+    "prog": "django_rest_crypto",
+    "desc": "Crypto Middleware for DjangoRestFramework",
+    "author": "suqingdong",
+    "authore_email": "suqingdong1114@gmail.com",
+    "version": "1.0.0"
+}
