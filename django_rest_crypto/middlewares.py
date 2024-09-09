@@ -13,8 +13,10 @@ class EncryptDataMiddleware(object):
 
     def process_template_response(self, request, response):
 
-      if hasattr(response, 'data') and response.data.get('data'):
-         raw_data = response.data.get('data')
+      data_key = settings.DATA_KEY if hasattr(settings, 'DATA_KEY') else 'data'
+
+      if hasattr(response, 'data') and response.data and isinstance(response.data, dict):
+         raw_data = response.data.get(data_key)
 
          ed = EncryptData(raw_data, settings.ENCRYPT_KEY)
 

@@ -10,12 +10,12 @@ python3 -m pip install django_rest_crypto
 ```python
 # settings.py
 
-MIDDLEWARES += [
+MIDDLEWARE += [
     'django_rest_crypto.middlewares.EncryptDataMiddleware',
 ]
 
 
-ENCRYPT_KEY = b'1234567890ABCDE'    # 16, 24 or 32 bytes, required
+ENCRYPT_KEY = b'1234567890ABCDEF'    # 16, 24 or 32 bytes, required
 ENCRYPT_MODE = 'CBC'                # default
 
 ENCRYPT_IV = b'1234567890ABCDE'     # optional

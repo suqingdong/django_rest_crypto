@@ -17,9 +17,11 @@ class EncryptData(object):
         return mode
 
     def check_data(self, data):
-        if type(data) in (dict, tuple, list):
-            data = json.dumps(data, ensure_ascii=False)
-        return str(data).encode()
+        try:
+            text = json.dumps(data, ensure_ascii=False).encode()
+        except:
+            text = str(data).encode()
+        return text
 
     @property
     def avail_modes(self):
